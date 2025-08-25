@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Funis de Vendas — Diamond Corporate</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b1220;
+    --bg-2:#0f1b2e;
+    --panel:#121c2f;
+    --card:#16243d;
+    --line:#223451;
+    --text:#e7eefc;
+    --muted:#bcd0f5;
+    --brand:#2e7bd9;
+    --accent:#6ab1ff;
+    --success:#2ecc71;
+    --warning:#f39c12;
+    --danger:#e74c3c;
+
+    /* Cores por solução */
+    --sol-vocare:#f39c12;     /* Patronal */
+    --sol-hub:#27ae60;        /* Investimentos */
+    --sol-erav:#8e44ad;       /* Comportamental */
+    --sol-learning:#2980b9;   /* Capacitação */
+    --sol-dash:#16a085;       /* Dashboards */
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:linear-gradient(135deg,#0b0e13 0%, #0d1a2a 45%, #08243a 100%);color:var(--text);font-family:Montserrat, Arial, sans-serif}
+  a{color:var(--accent);text-decoration:none}
+  header{
+    padding:28px 22px 10px;
+    background: linear-gradient(90deg, #081120 0%, #0c1c33 60%, #0a2540 100%);
+    border-bottom:1px solid #0f2544;
+    position:sticky; top:0; z-index:5;
+  }
+  .brand{
+    display:flex; align-items:center; gap:14px;
+  }
+  .diamond-logo{
+    width:40px;height:40px;border-radius:10px;
+    background: radial-gradient(circle at 30% 30%, #7ac1ff 0 30%, #1d5aa6 31% 60%, #0f2f5e 61% 100%);
+    box-shadow:0 0 18px rgba(122,193,255,.25) inset, 0 8px 28px rgba(0,0,0,.35);
+    position:relative;
+  }
+  .diamond-logo:after{
+    content:""; position:absolute; inset:10px 8px 8px 10px; border:2px solid rgba(255,255,255,.25); border-radius:6px; transform:rotate(8deg);
+  }
+  .brand h1{font-size:18px;margin:0;letter-spacing:.5px}
+  .subtitle{opacity:.75;font-size:12px;margin-top:2px}
+
+  .tabs{
+    display:flex; gap:6px; flex-wrap:wrap; margin-top:14px;
+  }
+  .tab{
+    padding:10px 14px; border:1px solid #21406b; border-radius:10px;
+    background:#0e1c31; color:var(--text); cursor:pointer; font-weight:600; transition:.15s;
+  }
+  .tab:hover{background:#12243f}
+  .tab.active{background:linear-gradient(180deg,#18365d,#132a48); border-color:#2e5d9b; box-shadow:0 6px 18px rgba(24,54,93,.35) inset}
+
+  .toolbar{
+    display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+    padding:14px 22px; border-bottom:1px dashed #21406b; background:rgba(8,16,30,.4)
+  }
+  .tool{
+    display:flex; gap:8px; align-items:center; background:#0f1d34; border:1px solid #203a62; border-radius:10px; padding:10px 12px;
+  }
+  .tool label{font-size:12px; color:var(--muted)}
+  select, button, input[type="search"]{
+    background:#0b1a30; color:var(--text); border:1px solid #1c3559; border-radius:8px; padding:8px 10px; font-family:inherit
+  }
+  button{cursor:pointer}
+  .ghost{opacity:.6}
+
+  /* Board */
+  .board-wrap{padding:20px}
+  .board{
+    display:grid; gap:16px;
+    grid-template-columns: repeat(5, minmax(260px, 1fr));
+  }
+  .column{
+    background:linear-gradient(180deg,#101d33 0%, #0f1a2c 100%);
+    border:1px solid #1c3457; border-radius:14px; min-height:360px; display:flex; flex-direction:column; overflow:hidden;
+  }
+  .col-head{
+    padding:12px 12px 10px; border-bottom:1px solid #1a2f4c; display:flex; align-items:center; justify-content:space-between; gap:8px;
+  }
+  .col-title{font-weight:700; font-size:14px}
+  .col-count{font-size:12px;color:var(--muted); background:#0b182b; padding:4px 8px; border:1px solid #1c3353; border-radius:999px}
+  .dropzone{flex:1; padding:12px; display:grid; gap:12px}
+
+  .card{
+    background:linear-gradient(180deg, #16243d, #13263f);
+    border:1px solid #274166; border-radius:12px; padding:12px; cursor:grab;
+    box-shadow:0 3px 12px rgba(0,0,0,.25);
+  }
+  .card:active{cursor:grabbing}
+  .card .title{font-weight:700; font-size:14px; margin-bottom:4px}
+  .card .meta{font-size:12px; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px}
+  .tag{
+    padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:.2px; border:1px solid transparent
+  }
+  .tag.vocare{background:rgba(243,156,18,.12); color:#f6c37a; border-color:rgba(243,156,18,.35)}
+  .tag.hub{background:rgba(39,174,96,.12); color:#8ee6b5; border-color:rgba(39,174,96,.35)}
+  .tag.erav{background:rgba(142,68,173,.12); color:#d2a6e3; border-color:rgba(142,68,173,.35)}
+  .tag.learning{background:rgba(41,128,185,.12); color:#98c9ea; border-color:rgba(41,128,185,.35)}
+  .tag.dash{background:rgba(22,160,133,.12); color:#9be2d4; border-color:rgba(22,160,133,.35)}
+  .tag.integrado{background:rgba(46,123,217,.13); color:#a8ccff; border-color:rgba(46,123,217,.35)}
+
+  .pill{background:#0b1a30; color:var(--muted); border:1px solid #1b355d; border-radius:999px; padding:2px 8px; font-size:11px}
+  .approach{font-size:12px; line-height:1.45; color:#dfe9ff}
+  .actions{display:flex; gap:8px; margin-top:10px}
+  .btn{padding:8px 10px; border:1px solid #22416c; background:#0e1c33; color:var(--text); border-radius:8px}
+  .btn:hover{background:#132849}
+
+  /* Modal */
+  .modal{
+    position:fixed; inset:0; display:none; place-items:center; background:rgba(4,10,20,.65); z-index:50;
+  }
+  .modal.active{display:grid}
+  .modal-card{
+    width:min(920px, 92vw);
+    background:linear-gradient(180deg, #14233d, #101c31);
+    border:1px solid #23416a; border-radius:16px; box-shadow:0 18px 60px rgba(0,0,0,.45);
+    padding:18px;
+  }
+  .modal-head{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:8px}
+  .modal-head h3{margin:0; font-size:18px}
+  .modal-body{display:grid; gap:8px; font-size:14px}
+  .close{background:#10213b; border:1px solid #2a4a79; padding:8px 10px; border-radius:8px; cursor:pointer}
+  .grid-2{display:grid; gap:12px; grid-template-columns:1fr 1fr}
+  .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#0a1526; border:1px solid #20395e; border-radius:6px; padding:6px 8px; color:#cfe1ff; font-size:12px}
+  .small{font-size:12px; color:var(--muted)}
+  .hr{height:1px; background:#223b61; margin:6px 0 10px}
+  .footer-note{opacity:.7; font-size:11px; margin:10px 0 24px; text-align:center}
+
+  @media (max-width:1140px){
+    .board{grid-template-columns:repeat(3, minmax(260px,1fr))}
+  }
+  @media (max-width:760px){
+    .board{grid-template-columns:repeat(1, minmax(260px,1fr))}
+    .grid-2{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="diamond-logo" aria-hidden="true"></div>
+      <div>
+        <h1>Diamond Corporate — Funis de Vendas Integrados</h1>
+        <div class="subtitle">Porta de entrada: <strong>Recuperação Administrativa do Patronal (Vocare Tax)</strong> → Cross-sell para Hub Mercantil, E-RAV, Diamond Learning e Dashboards</div>
+      </div>
+    </div>
+
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-tab="integrado">Funil Integrado</button>
+      <button class="tab" data-tab="vocare">Vocare Tax (Patronal)</button>
+      <button class="tab" data-tab="hub">Hub Mercantil (Investimentos)</button>
+      <button class="tab" data-tab="erav">E-RAV (Análise Comportamental)</button>
+      <button class="tab" data-tab="learning">Diamond Learning (Capacitação)</button>
+      <button class="tab" data-tab="dash">Dashboards Inteligentes</button>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="tool">
+      <label for="f-publico">Público:</label>
+      <select id="f-publico">
+        <option value="">Todos</option>
+        <option>CEO/Empresário</option>
+        <option>CFO/Financeiro</option>
+        <option>RH/Educação</option>
+        <option>Operações</option>
+        <option>Investidor</option>
+      </select>
+    </div>
+    <div class="tool">
+      <label for="f-origem">Origem:</label>
+      <select id="f-origem">
+        <option value="">Todas</option>
+        <option>Indicação</option>
+        <option>Orgânico</option>
+        <option>Evento</option>
+        <option>Outbound</option>
+      </select>
+    </div>
+    <div class="tool">
+      <label for="search">Buscar:</label>
+      <input type="search" id="search" placeholder="Empresa, contato, tags...">
+    </div>
+    <button class="btn" id="reset">Limpar filtros</button>
+  </div>
+
+  <div class="board-wrap">
+    <div id="board" class="board" aria-live="polite"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <h3 id="m-title">Detalhes do lead</h3>
+        <button class="close" id="m-close">Fechar ✕</button>
+      </div>
+      <div class="modal-body" id="m-body"></div>
+    </div>
+  </div>
+
+  <div class="footer-note">Todos os exemplos são fictícios para demonstração. Arraste e solte os cards entre as etapas para simular o fluxo.</div>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO — Etapas Kanban
+   ========================================================= */
+const STAGES = ["Prospecção", "Qualificação", "Proposta", "Fechamento", "Expansão"];
+
+/* =========================================================
+   DADOS — Cards de exemplo (edite à vontade)
+   Campos: id, tab, title, company, contact, role, publico, origem, solution, stage, approach, questions, next, value, tags:[]
+   tab: "integrado" | "vocare" | "hub" | "erav" | "learning" | "dash"
+   solution: vocare | hub | erav | learning | dash | integrado (para o funil master)
+   ========================================================= */
+let cards = [
+  /* ===================== FUNIL INTEGRADO (porta: patronal) ===================== */
+  {
+    id:"i-01", tab:"integrado", solution:"vocare", stage:"Prospecção",
+    title:"Diagnóstico sem custo da patronal",
+    company:"Grupo Lótus",
+    contact:"Mariana Rocha", role:"CFO", publico:"CFO/Financeiro", origem:"Indicação",
+    approach:"Estamos mapeando oportunidades de <b>recuperação administrativa do INSS patronal</b> sem desembolso inicial. Posso rodar um diagnóstico preliminar (sem custo) para estimar o potencial e já planejar <b>como reinvestir</b> os valores em áreas que acelerem resultado?",
+    questions:"Regime tributário? Folha média (últimos 60 meses)? Já fez recuperação? Há processos em curso?",
+    next:"Agendar reunião de 30min para coleta de dados e assinatura de NDA.",
+    value:"Potencial estimado: R$ 750k — 36 meses",
+    tags:["Porta de Entrada","Compliance"]
+  },
+  {
+    id:"i-02", tab:"integrado", solution:"vocare", stage:"Prospecção",
+    title:"Mapa de crédito patronal",
+    company:"Alpha Indústria",
+    contact:"Carlos F.", role:"Diretor", publico:"CEO/Empresário", origem:"Outbound",
+    approach:"Temos visto empresas do seu porte recuperarem valores relevantes da <b>contribuição patronal</b> via via administrativa. Proponho um <b>mapa de crédito</b> para identificar, de forma segura, o montante elegível e o cronograma de recuperação.",
+    questions:"Folha/encargos por centro de custo? Períodos sem aproveitamento de créditos?",
+    next:"Enviar checklist de documentos e proposta de êxito.",
+    value:"Potencial a estimar",
+    tags:["Patronal","Diagnóstico"]
+  },
+  {
+    id:"i-03", tab:"integrado", solution:"vocare", stage:"Qualificação",
+    title:"Triagem de documentos e viabilidade",
+    company:"Comercial Vega",
+    contact:"Larissa M.", role:"CFO", publico:"CFO/Financeiro", origem:"Orgânico",
+    approach:"Recebemos a base. Vamos validar <b>períodos elegíveis</b>, consolidar evidências e simular cenários de retorno, já prevendo <b>destinação dos créditos</b> para iniciativas de alto impacto.",
+    questions:"Qual a prioridade de destinação: caixa, tecnologia, capacitação, investimentos?",
+    next:"Enviar relatório de viabilidade + cronograma de execução.",
+    value:"Potencial: R$ 420k",
+    tags:["Análise","Planejamento"]
+  },
+  {
+    id:"i-04", tab:"integrado", solution:"vocare", stage:"Proposta",
+    title:"Proposta de êxito + cronograma",
+    company:"MetalPress",
+    contact:"Rafael A.", role:"CEO", publico:"CEO/Empresário", origem:"Indicação",
+    approach:"Modelo de <b>remuneração por êxito</b>, cronograma em ondas e governança de compliance. Inclui <b>plano de reinvestimento</b> (Hub, E-RAV, Learning, Dashboards) com % recomendado por retorno/risco.",
+    questions:"Apresentar política de riscos e LGPD; validação jurídica.",
+    next:"Envio para assinatura eletrônica e kickoff.",
+    value:"Proposta R$ êxito 18%",
+    tags:["Assinatura","Governança"]
+  },
+  {
+    id:"i-05", tab:"integrado", solution:"vocare", stage:"Fechamento",
+    title:"Assinatura e Kick-off Patronal",
+    company:"Norontex",
+    contact:"Bruna S.", role:"CFO", publico:"CFO/Financeiro", origem:"Evento",
+    approach:"Contrato assinado. Definimos squad, marcos quinzenais e indicadores de captura. Apresentamos <b>roteiro de destinação</b> do crédito por estágio.",
+    questions:"Bancos/contabilidade alinhados; pontos de contato definidos.",
+    next:"Entrar execução + preparar agenda de Cross-sell.",
+    value:"Viabilidade confirmada",
+    tags:["Kickoff","Compliance"]
+  },
+  /* Expansão após patronal → cross-sell */
+  {
+    id:"i-06", tab:"integrado", solution:"hub", stage:"Expansão",
+    title:"Reinvestir via Hub (FIDC Agro com lastro)",
+    company:"Norontex",
+    contact:"Bruna S.", role:"CFO", publico:"CFO/Financeiro", origem:"Indicação",
+    approach:"Com parte do valor recuperado, proponho aplicar em <b>FIDC Agro com lastro real</b> para rentabilizar o caixa enquanto executamos as próximas ondas. Posso enviar uma simulação de alocação e prazos?",
+    questions:"Janela de liquidez desejada? Política de risco?",
+    next:"Apresentar carteira e diligências.",
+    value:"Ticket sugerido: 20% do crédito",
+    tags:["Investimentos","Lastro"]
+  },
+  {
+    id:"i-07", tab:"integrado", solution:"erav", stage:"Expansão",
+    title:"E-RAV — Redução de risco humano",
+    company:"Norontex",
+    contact:"Vanessa P.", role:"RH", publico:"RH/Educação", origem:"Indicação",
+    approach:"Com o fôlego gerado, podemos <b>mapear perfil comportamental</b> e reduzir afastamentos/absenteísmo com o <b>E-RAV</b> (indicadores e alertas de intervenção). Posso demonstrar um painel com casos práticos?",
+    questions:"Quais áreas apresentam maior rotatividade?",
+    next:"Agendar demo de 30min.",
+    value:"Plano E-RAV Essencial",
+    tags:["Comportamento","People Analytics"]
+  },
+  {
+    id:"i-08", tab:"integrado", solution:"learning", stage:"Expansão",
+    title:"Diamond Learning — Trilha de capacitação",
+    company:"Norontex",
+    contact:"Vanessa P.", role:"RH", publico:"RH/Educação", origem:"Indicação",
+    approach:"A partir dos insights do E-RAV, abrimos trilhas de <b>capacitação</b> para desempenho com a <b>Diamond Learning</b> (aulas, simulados, ranking). Posso sugerir uma trilha piloto para 25 colaboradores?",
+    questions:"Metas de performance e indicadores-alvo?",
+    next:"Desenhar trilha e cronograma.",
+    value:"Plano 25 licenças",
+    tags:["Upskill","Performance"]
+  },
+  {
+    id:"i-09", tab:"integrado", solution:"dash", stage:"Expansão",
+    title:"Dashboards — Governança e KPIs",
+    company:"Norontex",
+    contact:"Felipe T.", role:"COO", publico:"Operações", origem:"Indicação",
+    approach:"Integramos dados de finanças, RH e operações em <b>dashboards executivos</b> para decisão baseada em evidências. Posso montar um protótipo com seus KPIs críticos?",
+    questions:"Quais KPIs C-level em reunião mensal?",
+    next:"Prototipar e validar com board.",
+    value:"MVP de KPIs",
+    tags:["Governança","Dados"]
+  },
+
+  /* ===================== FUNIS INDIVIDUAIS ===================== */
+  /* VOCare Tax */
+  {id:"v-01", tab:"vocare", solution:"vocare", stage:"Prospecção", title:"Diagnóstico inicial patronal", company:"Ferro & Cia", contact:"Patrícia C.", role:"CFO", publico:"CFO/Financeiro", origem:"Orgânico",
+    approach:"Executamos <b>recuperação administrativa de patronal</b> sem adiantamento. Posso iniciar um diagnóstico sem custo para dimensionar o retorno?",
+    questions:"Regime/folha? Recuperações anteriores?",
+    next:"NDA + checklist documentos.", value:"Em apuração", tags:["Porta de Entrada"]},
+  {id:"v-02", tab:"vocare", solution:"vocare", stage:"Qualificação", title:"Validação de períodos", company:"SolarTex", contact:"Eduardo R.", role:"CFO", publico:"CFO/Financeiro", origem:"Evento",
+    approach:"Validamos períodos elegíveis e modelamos cenários. Apresento relatório com <b>cronograma por ondas</b> e governança de compliance.",
+    questions:"Janelas de caixa? Prioridades?",
+    next:"Enviar proposta de êxito.", value:"Potencial R$ 380k", tags:["Análise"]},
+  {id:"v-03", tab:"vocare", solution:"vocare", stage:"Proposta", title:"Proposta de êxito", company:"Omega Food", contact:"Rogério M.", role:"CEO", publico:"CEO/Empresário", origem:"Indicação",
+    approach:"Proposta por <b>êxito</b>, SLAs e marcos quinzenais. Inclui plano de <b>destinação</b> do crédito (investimentos/tecnologia).",
+    questions:"Ajustes jurídicos/LGPD?",
+    next:"Assinatura eletrônica.", value:"Êxito 18%", tags:["Governança"]},
+  {id:"v-04", tab:"vocare", solution:"vocare", stage:"Fechamento", title:"Kickoff execução", company:"Omega Food", contact:"Rogério M.", role:"CEO", publico:"CEO/Empresário", origem:"Indicação",
+    approach:"Time alocado, checkpoints e integrações com contabilidade.",
+    questions:"POCs internas definidas?", next:"Execução.", value:"—", tags:["Execução"]},
+  {id:"v-05", tab:"vocare", solution:"vocare", stage:"Expansão", title:"Plano de reinvestimento", company:"Omega Food", contact:"Rogério M.", role:"CEO", publico:"CEO/Empresário", origem:"Indicação",
+    approach:"Alocar % do crédito para <b>FIDC Agro (Hub)</b> e iniciativas de <b>E-RAV/Learning/Dash</b>.",
+    questions:"Perfil de risco? KPIs?", next:"Reuniões com frentes.", value:"—", tags:["Cross-sell"]},
+
+  /* Hub Mercantil */
+  {id:"h-01", tab:"hub", solution:"hub", stage:"Prospecção", title:"Tese de FIDC Agro com lastro", company:"Platina Log", contact:"Samuel V.", role:"CFO", publico:"CFO/Financeiro", origem:"Outbound",
+    approach:"Apresentamos tese de <b>FIDC Agro com lastro físico</b> para rentabilizar caixa. Muitos clientes financiam isso com valores <b>recuperados da patronal</b>. Faço uma simulação?",
+    questions:"Horizonte e liquidez? Política de risco?",
+    next:"Enviar lâmina e D.D.", value:"Ticket sugerido R$ 500k", tags:["Lastro","ROI"]},
+  {id:"h-02", tab:"hub", solution:"hub", stage:"Qualificação", title:"Perfil & suitability", company:"Platina Log", contact:"Samuel V.", role:"CFO", publico:"CFO/Financeiro", origem:"Outbound",
+    approach:"Coletar suitability e alinhar carteira com política da empresa.",
+    questions:"Teto por emissor? Diversificação?", next:"Proposta de alocação.", value:"—", tags:["Suitability"]},
+  {id:"h-03", tab:"hub", solution:"hub", stage:"Proposta", title:"Alocação recomendada", company:"Platina Log", contact:"Samuel V.", role:"CFO", publico:"CFO/Financeiro", origem:"Outbound",
+    approach:"Mix de prazos e emissores com <b>lastro</b>. Integra com fluxo de caixa do cliente.",
+    questions:"Janelas de desembolso?", next:"Assinatura/boletagem.", value:"—", tags:["Carteira"]},
+  {id:"h-04", tab:"hub", solution:"hub", stage:"Fechamento", title:"Boletagem e início", company:"Platina Log", contact:"Samuel V.", role:"CFO", publico:"CFO/Financeiro", origem:"Outbound",
+    approach:"Boletagem e onboarding com acompanhamento.",
+    questions:"Relatórios mensais?", next:"Monitorar e rebalancear.", value:"—", tags:["Onboarding"]},
+  {id:"h-05", tab:"hub", solution:"hub", stage:"Expansão", title:"Reaplicação de ganhos", company:"Platina Log", contact:"Samuel V.", role:"CFO", publico:"CFO/Financeiro", origem:"Outbound",
+    approach:"Reaplicar juros recebidos; integrar com dashboards executivos.",
+    questions:"Metas de rentabilidade?", next:"Rotina trimestral.", value:"—", tags:["Compound"]},
+
+  /* E-RAV */
+  {id:"e-01", tab:"erav", solution:"erav", stage:"Prospecção", title:"Mapa de riscos humanos", company:"Rede Prisma", contact:"Letícia N.", role:"RH", publico:"RH/Educação", origem:"Evento",
+    approach:"Com o <b>E-RAV</b> identificamos riscos comportamentais e prevenimos afastamentos. Demonstro um painel de <b>indicadores e alertas</b>?",
+    questions:"Áreas com maior rotatividade?", next:"Agendar demo.", value:"—", tags:["People Analytics"]},
+  {id:"e-02", tab:"erav", solution:"erav", stage:"Qualificação", title:"Levantamento de dados", company:"Rede Prisma", contact:"Letícia N.", role:"RH", publico:"RH/Educação", origem:"Evento",
+    approach:"Coletar histórico (absenteísmo, turnover), definir metas e grupos pilotos.",
+    questions:"Segmentos/polos?", next:"Proposta em 48h.", value:"—", tags:["Piloto"]},
+  {id:"e-03", tab:"erav", solution:"erav", stage:"Proposta", title:"Plano E-RAV Essencial", company:"Rede Prisma", contact:"Letícia N.", role:"RH", publico:"RH/Educação", origem:"Evento",
+    approach:"Pacote com <b>indicadores comportamentais, alertas e trilhas</b> associadas (via Learning).",
+    questions:"SLA de reports?", next:"Assinatura.", value:"—", tags:["Plano"]},
+  {id:"e-04", tab:"erav", solution:"erav", stage:"Fechamento", title:"Kickoff E-RAV", company:"Rede Prisma", contact:"Letícia N.", role:"RH", publico:"RH/Educação", origem:"Evento",
+    approach:"Configurar camadas de acesso e governança.",
+    questions:"Oficiais de segurança?", next:"Operação.", value:"—", tags:["Execução"]},
+  {id:"e-05", tab:"erav", solution:"erav", stage:"Expansão", title:"Integra com Learning", company:"Rede Prisma", contact:"Letícia N.", role:"RH", publico:"RH/Educação", origem:"Evento",
+    approach:"Trilhas de capacitação com base nos indicadores.",
+    questions:"KPIs de aprendizado?", next:"Cronograma de trilhas.", value:"—", tags:["Upsell"]},
+
+  /* Learning */
+  {id:"l-01", tab:"learning", solution:"learning", stage:"Prospecção", title:"Trilha de alta performance", company:"Delta Serviços", contact:"André B.", role:"RH", publico:"RH/Educação", origem:"Indicação",
+    approach:"A <b>Diamond Learning</b> acelera desempenho com <b>trilhas, simulados e ranking</b>. Posso sugerir uma trilha piloto?",
+    questions:"Metas por equipe?", next:"Esboçar trilha.", value:"—", tags:["Upskill"]},
+  {id:"l-02", tab:"learning", solution:"learning", stage:"Qualificação", title:"Assessment de lacunas", company:"Delta Serviços", contact:"André B.", role:"RH", publico:"RH/Educação", origem:"Indicação",
+    approach:"Levantamento de lacunas e priorização por impacto.",
+    questions:"Indicadores de performance?", next:"Proposta.", value:"—", tags:["Diagnóstico"]},
+  {id:"l-03", tab:"learning", solution:"learning", stage:"Proposta", title:"Plano 50 licenças", company:"Delta Serviços", contact:"André B.", role:"RH", publico:"RH/Educação", origem:"Indicação",
+    approach:"Licenças, calendário e KPIs de aprendizado.",
+    questions:"Meta trimestral?", next:"Assinatura.", value:"—", tags:["Plano"]},
+  {id:"l-04", tab:"learning", solution:"learning", stage:"Fechamento", title:"Onboarding mentores", company:"Delta Serviços", contact:"André B.", role:"RH", publico:"RH/Educação", origem:"Indicação",
+    approach:"Setup de trilhas e tutores.",
+    questions:"Turmas/prazos?", next:"Operação.", value:"—", tags:["Execução"]},
+  {id:"l-05", tab:"learning", solution:"learning", stage:"Expansão", title:"Integra com E-RAV/Dash", company:"Delta Serviços", contact:"André B.", role:"RH", publico:"RH/Educação", origem:"Indicação",
+    approach:"Conectar indicadores do E-RAV e mostrar impacto nos KPIs.",
+    questions:"KPIs alvo?", next:"Sprint de integração.", value:"—", tags:["Integração"]},
+
+  /* Dashboards */
+  {id:"d-01", tab:"dash", solution:"dash", stage:"Prospecção", title:"Painel executivo de KPIs", company:"Cobalto S/A", contact:"Flávia S.", role:"COO", publico:"Operações", origem:"Orgânico",
+    approach:"Unificamos dados em <b>dashboards executivos</b> para decisões rápidas. Quer ver um protótipo com seus KPIs críticos?",
+    questions:"Reuniões C-level: quais KPIs?", next:"Protótipo.", value:"—", tags:["Governança"]},
+  {id:"d-02", tab:"dash", solution:"dash", stage:"Qualificação", title:"Levantamento de fontes", company:"Cobalto S/A", contact:"Flávia S.", role:"COO", publico:"Operações", origem:"Orgânico",
+    approach:"Mapear fontes e latência, definir camadas de segurança.",
+    questions:"ERPs/planilhas/API?", next:"Proposta.", value:"—", tags:["Dados"]},
+  {id:"d-03", tab:"dash", solution:"dash", stage:"Proposta", title:"MVP de KPIs", company:"Cobalto S/A", contact:"Flávia S.", role:"COO", publico:"Operações", origem:"Orgânico",
+    approach:"MVP com KPIs de Finanças, RH e Operações.",
+    questions:"Cadência de reports?", next:"Assinatura.", value:"—", tags:["MVP"]},
+  {id:"d-04", tab:"dash", solution:"dash", stage:"Fechamento", title:"Entrega do MVP", company:"Cobalto S/A", contact:"Flávia S.", role:"COO", publico:"Operações", origem:"Orgânico",
+    approach:"Validação com board e plano de evolução.",
+    questions:"Backlog de métricas?", next:"Evolução.", value:"—", tags:["Entrega"]},
+  {id:"d-05", tab:"dash", solution:"dash", stage:"Expansão", title:"OKRs + integrações", company:"Cobalto S/A", contact:"Flávia S.", role:"COO", publico:"Operações", origem:"Orgânico",
+    approach:"Conectar OKRs e automatizar ingestão de dados.",
+    questions:"Roadmap trimestral?", next:"Sprint 1.", value:"—", tags:["Escala"]},
+];
+
+/* =========================================================
+   RENDERIZAÇÃO DO BOARD
+   ========================================================= */
+let activeTab = "integrado";
+const boardEl = document.getElementById("board");
+const tabsEl = document.getElementById("tabs");
+
+function tagClass(solution){
+  switch(solution){
+    case "vocare": return "tag vocare";
+    case "hub": return "tag hub";
+    case "erav": return "tag erav";
+    case "learning": return "tag learning";
+    case "dash": return "tag dash";
+    default: return "tag integrado";
+  }
+}
+function tagLabel(solution){
+  return {
+    "vocare":"Vocare Tax",
+    "hub":"Hub Mercantil",
+    "erav":"E-RAV",
+    "learning":"Diamond Learning",
+    "dash":"Dashboards",
+    "integrado":"Integrado"
+  }[solution] || "Integrado";
+}
+
+function filteredCards(){
+  const pub = document.getElementById("f-publico").value.trim();
+  const ori = document.getElementById("f-origem").value.trim();
+  const q = document.getElementById("search").value.trim().toLowerCase();
+
+  return cards.filter(c=>{
+    if(c.tab!==activeTab) return false;
+    if(pub && c.publico!==pub) return false;
+    if(ori && c.origem!==ori) return false;
+    if(q){
+      const hay = [c.title,c.company,c.contact,c.role,c.publico,c.origem,(c.tags||[]).join(" "),c.approach,c.questions,c.next].join(" ").toLowerCase();
+      if(!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function render(){
+  boardEl.innerHTML = "";
+  const data = filteredCards();
+  STAGES.forEach(stage=>{
+    const col = document.createElement("div");
+    col.className="column";
+    col.dataset.stage=stage;
+    col.innerHTML = `
+      <div class="col-head">
+        <div class="col-title">${stage}</div>
+        <div class="col-count" data-count>${data.filter(c=>c.stage===stage).length} itens</div>
+      </div>
+      <div class="dropzone" data-dropzone></div>
+    `;
+    boardEl.appendChild(col);
+
+    const dz = col.querySelector("[data-dropzone]");
+    data.filter(c=>c.stage===stage).forEach(c=>{
+      dz.appendChild(cardEl(c));
+    });
+
+    // DnD handlers
+    dz.addEventListener("dragover", ev=>{ev.preventDefault(); dz.classList.add("ghost")});
+    dz.addEventListener("dragleave", ()=>dz.classList.remove("ghost"));
+    dz.addEventListener("drop", ev=>{
+      ev.preventDefault();
+      dz.classList.remove("ghost");
+      const id = ev.dataTransfer.getData("text/plain");
+      moveCard(id, stage);
+    });
+  });
+}
+
+function cardEl(c){
+  const el = document.createElement("div");
+  el.className="card";
+  el.draggable = true;
+  el.id = c.id;
+  el.addEventListener("dragstart", ev=>{
+    ev.dataTransfer.setData("text/plain", c.id);
+    ev.dataTransfer.effectAllowed="move";
+  });
+  el.addEventListener("click", ()=>openModal(c));
+
+  el.innerHTML = `
+    <div class="title">${c.title}</div>
+    <div class="meta">
+      <span class="${tagClass(c.solution)}">${tagLabel(c.solution)}</span>
+      <span class="pill">${c.company}</span>
+      <span class="pill">${c.contact} • ${c.role}</span>
+      <span class="pill">${c.publico}</span>
+      <span class="pill">${c.origem}</span>
+    </div>
+    <div class="approach">💬 <b>Abordagem sugerida:</b> ${c.approach}</div>
+    ${c.value?`<div class="small">💰 <b>Valor/Estimativa:</b> ${c.value}</div>`:""}
+  `;
+  return el;
+}
+
+function moveCard(id, newStage){
+  const idx = cards.findIndex(c=>c.id===id);
+  if(idx>=0){
+    cards[idx] = {...cards[idx], stage:newStage};
+    render();
+  }
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+const modal = document.getElementById("modal");
+const mClose = document.getElementById("m-close");
+const mBody = document.getElementById("m-body");
+const mTitle = document.getElementById("m-title");
+
+function openModal(c){
+  mTitle.textContent = `${c.title} — ${c.company}`;
+  mBody.innerHTML = `
+    <div class="grid-2">
+      <div>
+        <div class="small">Contato</div>
+        <div class="kbd">${c.contact} • ${c.role}</div>
+      </div>
+      <div>
+        <div class="small">Público / Origem</div>
+        <div class="kbd">${c.publico} • ${c.origem}</div>
+      </div>
+    </div>
+    <div class="hr"></div>
+    <div>
+      <div class="small">Abordagem sugerida</div>
+      <div class="kbd" id="copy-approach">${stripTags(c.approach)}</div>
+      <div class="actions">
+        <button class="btn" onclick="copyText('copy-approach')">Copiar abordagem</button>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="small">Perguntas-chave</div>
+        <div class="kbd">${c.questions||"—"}</div>
+      </div>
+      <div>
+        <div class="small">Próxima ação</div>
+        <div class="kbd">${c.next||"—"}</div>
+      </div>
+    </div>
+    ${c.value?(`<div><div class="small">Valor/Estimativa</div><div class="kbd">${c.value}</div></div>`):""}
+    ${c.tags?.length?(`<div><div class="small">Tags</div><div class="kbd">${c.tags.join(", ")}</div></div>`):""}
+  `;
+  modal.classList.add("active");
+}
+
+function stripTags(html){
+  const tmp = document.createElement("div");
+  tmp.innerHTML = html;
+  return (tmp.textContent || tmp.innerText || "").trim();
+}
+function copyText(id){
+  const el = document.getElementById(id);
+  const text = el.innerText || el.textContent;
+  navigator.clipboard.writeText(text).then(()=>{ /* opcional: toast */ });
+}
+
+mClose.addEventListener("click", ()=>modal.classList.remove("active"));
+modal.addEventListener("click", (e)=>{ if(e.target===modal) modal.classList.remove("active"); });
+
+/* =========================================================
+   TABS & FILTROS
+   ========================================================= */
+tabsEl.querySelectorAll(".tab").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    tabsEl.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    activeTab = btn.dataset.tab;
+    render();
+  });
+});
+
+document.getElementById("f-publico").addEventListener("change", render);
+document.getElementById("f-origem").addEventListener("change", render);
+document.getElementById("search").addEventListener("input", render);
+document.getElementById("reset").addEventListener("click", ()=>{
+  document.getElementById("f-publico").value="";
+  document.getElementById("f-origem").value="";
+  document.getElementById("search").value="";
+  render();
+});
+
+/* Inicializa */
+render();
+</script>
+</body>
+</html>
