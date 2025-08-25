@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <meta charset="UTF-8" />
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T92L6D2K');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diamond Corporate</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      const burger = document.querySelector('.burger');
+      const nav = document.querySelector('.nav-links');
+      if (burger && nav) {
+        burger.addEventListener('click', () => {
+          nav.classList.toggle('nav-active');
+          burger.classList.toggle('toggle');
+        });
+      }
+
+      const fadeElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T92L6D2K" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- TOPO FIXO -->
+  <div class="header-fixed">
+    <header class="top-menu">
+      <div class="menu-flex">
+        <div></div>
+        <nav class="menu-nav">
+          <ul class="menu-right">
+            <li><a href="#home"><img src="img/home.png" alt="Início" class="menu-icon">Home</a></li>
+            <li><a href="#sobre"><img src="img/quem_somos.png" alt="Quem Somos" class="menu-icon">Quem Somos</a></li>
+            <li><a href="#connection"><img src="img/connection.png" alt="Diamond Connection" class="menu-icon">Diamond Connection</a></li>
+            <li><a href="#clientes"><img src="img/clientes.png" alt="Clientes e Parceiros" class="menu-icon">Clientes e Parceiros</a></li>
+            <li><a href="#diferencial"><img src="img/diferencial.png" alt="Ícone Diferencial" class="menu-icon">Diferencial Competitivo</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="slim-header">
+      <a href="#home" class="logo-link" aria-label="Voltar ao início">
+        <img src="img/logo.png" alt="Logo" class="logo">
+      </a>
+      <div class="brand-name">Diamond Corporate</div>
+      <h1>Consultoria estratégica para empresas que exigem resultados</h1>
+    </div>
+  </div>
+
+  <!-- Âncora com offset para Home -->
+  <div id="home" class="anchor-offset"></div>
+
+  <!-- HERO / HOME -->
+  <section id="inicio" class="hero-flex fade-in">
+    <div class="container">
+      <div class="row">
+        <div class="half">
+          <div class="icon-cards-fixed">
+            <div class="icon-card"><div class="icon">📊</div><p>Consultoria Estratégica</p></div>
+            <div class="icon-card"><div class="icon">💼</div><p>Gestão Empresarial</p></div>
+            <div class="icon-card"><div class="icon">📈</div><p>Business Intelligence</p></div>
+            <div class="icon-card"><div class="icon">⚙️</div><p>Soluções em Tecnologia</p></div>
+            <div class="icon-card"><div class="icon">🌐</div><p>Transformação Digital</p></div>
+            <div class="icon-card"><div class="icon">🧠</div><p>Inovação & Performance</p></div>
+          </div>
+        </div>
+
+        <div class="half">
+          <div class="card-box" id="contato">
+            <form>
+              <input type="text" placeholder="Nome completo" required>
+              <input type="email" placeholder="E-mail corporativo" required>
+              <input type="tel" placeholder="Telefone/WhatsApp" required>
+              <textarea placeholder="Conte seu desafio em 1–2 frases" rows="4" required></textarea>
+              <button type="submit">Quero um diagnóstico gratuito</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seta-link para O que oferecemos -->
+    <a href="#oqueoferecemos" class="section-pointer" aria-label="Ir para O que oferecemos">
+      <span class="arrow">▼</span>
+      <span class="label">O que oferecemos</span>
+    </a>
+  </section>
+
+  <!-- Âncora com offset para O que oferecemos -->
+  <div id="oqueoferecemos" class="anchor-offset"></div>
+
+  <section id="servicos" class="blue-bg fade-in">
+    <div class="container services">
+      <h2>O que oferecemos</h2>
+      <ul>
+        <li>Planejamento orientado a dados</li>
+        <li>Dashboards executivos em tempo real</li>
+        <li>Automação de Processos e Indicadores</li>
+        <li>Soluções Empresariais Customizadas</li>
+        <li>EAD corporativo com gamificação</li>
+        <li>De dados comportamentais e de desempenho a ações estratégicas que previnem riscos e elevam a qualidade</li>
+        <li>Integrações sob medida (ERP/CRM/Financeiro)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Quem Somos -->
+  <section id="sobre" class="fade-in sobre-com-fundo">
+    <div class="container sobre-grid">
+      <div class="sobre-texto">
+        <h3>Quem Somos</h3>
+        <p>
+          A <strong>Diamond Corporate</strong> é uma consultoria que atua com foco em inteligência empresarial, gestão estratégica e soluções integradas.
+          Unimos tecnologia, dados e parceiros estratégicos para destravar o crescimento de empresas que desejam ir além,
+          transformando obrigações em oportunidades, dados em decisões e ideias em resultados concretos.
+          <br><br>
+          Com produtos próprios e integrações inteligentes, entregamos soluções de alta performance mesmo em cenários de baixa disponibilidade de investimento.
+          Atuamos lado a lado com nossos clientes, criando planos realistas de evolução digital, operacional e estratégica.
+          <br><br>
+          Acreditamos que a excelência não é um objetivo — é um hábito. E é com esse princípio que conectamos gestão, pessoas e operação,
+          para gerar resultados sustentáveis e transformação real.
+        </p>
+      </div>
+
+      <div class="sobre-mvv">
+        <div class="mvv-item fade-in">
+          <img src="img/icon_missao.png" alt="Ícone Missão" />
+          <div>
+            <h4><strong>Missão</strong></h4>
+            <p>Destravar o crescimento de empresas por meio de soluções estratégicas, tecnológicas e acessíveis, conectando inteligência empresarial com resultados mensuráveis.</p>
+          </div>
+        </div>
+
+        <div class="mvv-item fade-in">
+          <img src="img/icon_visao.png" alt="Ícone Visão" />
+          <div>
+            <h4><strong>Visão</strong></h4>
+            <p>Ser referência nacional em gestão integrada de negócios, reconhecida pela capacidade de transformar estrutura organizacional em performance e crescimento.</p>
+          </div>
+        </div>
+
+        <div class="mvv-item fade-in">
+          <img src="img/icon_valores.png" alt="Ícone Valores" />
+          <div>
+            <h4><strong>Valores</strong></h4>
+            <p>Excelência como hábito; Resultado com estratégia; Inovação com propósito; Ética e transparência em cada entrega; Alianças que potencializam.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diamond Connection -->
+  <section id="connection" class="connection-section-visual">
+    <div class="connection-header">
+      <h2 class="connection-title">Diamond Connection</h2>
+      <p class="connection-lead">
+        Uma aliança estratégica que transforma tributos recuperados em soluções inteligentes para o crescimento do seu negócio.
+      </p>
+    </div>
+
+    <div class="connection-grid">
+      <div class="connection-item">
+        <a href="https://estimativa-calculo.tributojusto.com.br/"><img src="img/icon_tributos.png" alt="Recuperação Patronal"></a>
+        <h3>Recuperação do Patronal</h3>
+        <p>Identificamos valores pagos indevidamente e transformamos isso em oportunidade real.</p>
+      </div>
+
+      <div class="connection-arrow" aria-hidden="true">➜</div>
+
+      <div class="connection-item">
+        <img src="img/icon_consultoria.png" alt="Consultoria Estratégica">
+        <h3>Consultoria & Tecnologia</h3>
+        <p>Aplicamos o valor recuperado em soluções personalizadas para operação e gestão.</p>
+      </div>
+
+      <div class="connection-arrow" aria-hidden="true">➜</div>
+
+      <div class="connection-item">
+        <a href="img/hub.pdf"><img src="img/icon_investimento.png" alt="Investimentos"></a>
+        <h3>Investimentos Inteligentes</h3>
+        <p>Oportunidades seguras e rentáveis para reinvestir com inteligência.</p>
+      </div>
+    </div>
+
+    <p class="connection-final">
+      Não é gasto. É reinvestimento estratégico. Essa é a <strong>Diamond Connection</strong>.
+    </p>
+  </section>
+
+  <!-- Clientes & Parceiros -->
+  <section id="clientes" class="trust-section fade-in">
+    <div class="container">
+      <div class="trust-header">
+        <h1>Clientes & Parceiros</h1>
+        <p>Resultados comprovados, confiança contínua e alianças que ampliam o impacto.</p>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card"><strong>R$ 33,4 mi+</strong><span>em tributos recuperados</span></div>
+        <div class="metric-card"><strong>180+</strong><span>projetos concluídos</span></div>
+        <div class="metric-card"><strong>20 segmentos</strong><span>atuantes</span></div>
+        <div class="metric-card"><strong>100%</strong><span>satisfação dos clientes</span></div>
+      </div>
+
+      <!-- Esteira dupla de logos (x2) -->
+      <div class="logo-marquee x2" aria-label="Empresas atendidas e parceiras">
+        <div class="marquee-track">
+          <div class="logo-ph"><img src="img/logo_vocare_tax.png" alt="Vocare Tax"></div>
+          <div class="logo-ph"><img src="img/logo_imp_concursos.png" alt="IMP Concursos"></div>
+          <div class="logo-ph"><img src="img/logo_hub_mercantil_card.png" alt="Hub Mercantil"></div>
+	  <div class="logo-ph"><img src="img/instituto.png" alt="Instituto 61"></div>
+          <div class="logo-ph"><img src="img/briscomm.png" alt="Briscomm"></div>
+	  <div class="logo-ph"><img src="img/trix.png" alt="Trix"></div>
+          <div class="logo-ph"><img src="img/alcateia.png" alt="Alcateia"></div>
+        </div>
+        <div class="marquee-track invert">
+<div class="logo-ph"><img src="img/alcateia.png" alt="Alcateia"></div>          
+<div class="logo-ph"><img src="img/trix.png" alt="Trix"></div>
+          <div class="logo-ph"><img src="img/briscomm.png" alt="Briscomm"></div>
+          
+	  <div class="logo-ph"><img src="img/instituto.png" alt="Instituto 61"></div>
+          <div class="logo-ph"><img src="img/logo_hub_mercantil_card.png" alt="Hub Mercantil"></div>
+	  <div class="logo-ph"><img src="img/logo_imp_concursos.png" alt="IMP Concursos"></div>
+<div class="logo-ph"><img src="img/logo_vocare_tax.png" alt="Vocare Tax"></div>          
+        </div>
+      </div>
+
+      <!-- Depoimentos em cards -->
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p>“A Diamond virou a chave da nossa operação. O BI e a revisão de processos geraram ganho de margem já no primeiro trimestre.”</p>
+          <span class="who">Head Comercial — Hub Mercantil</span>
+        </div>
+        <div class="testimonial-card">
+          <p>“Recuperamos valores expressivos do patronal e reinvestimos em automações. O ROI veio mais rápido do que o previsto.”</p>
+          <span class="who">CFO — Rosh Logística e Distribuição</span>
+        </div>
+        <div class="testimonial-card">
+          <p>“Integrações, indicadores e um plano claro. Hoje decidimos com dados — e crescemos com previsibilidade.”</p>
+          <span class="who">CEO — Caut Serviços</span>
+        </div>
+      </div>
+
+      <div class="partner-cards">
+        </div>
+    </div>
+  </section>
+
+  <!-- Diferencial Competitivo -->
+  <section id="diferencial" class="diferencial-section fade-in">
+    <div class="container">
+      <div class="diferencial-header">
+        <h1>Diferencial Competitivo</h1>
+        <p class="diferencial-intro">
+          Tecnologia + ciência do comportamento + gestão de dados.<br>
+          <strong>Decisões com evidência, não opinião.</strong>
+        </p>
+      </div>
+
+      <div class="diferencial-grid">
+        <div class="diferencial-card">
+          <img src="img/icon_tech.png" alt="Tecnologia Avançada">
+          <h3>Tecnologia Avançada</h3>
+          <p>Plataformas robustas e seguras para operação e análise em tempo real.</p>
+        </div>
+
+        <div class="diferencial-card">
+          <img src="img/icon_behavior.png" alt="Ciência do Comportamento">
+          <h3>Ciência do Comportamento</h3>
+          <p>Insights validados para compreender e antecipar ações humanas.</p>
+        </div>
+
+        <div class="diferencial-card">
+          <img src="img/icon_data.png" alt="Gestão de Dados">
+          <h3>Gestão de Dados</h3>
+          <p>Integração de fontes e indicadores para decisões assertivas.</p>
+        </div>
+      </div>
+    </div>
+    <div class="diferencial-fecho">
+      Esta frente da <strong>Diamond Connection</strong> tem um valor inestimável:
+      potencializar o ativo mais valioso da sua organização — <strong>as pessoas</strong>.
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    
+
+    <div class="footer-legal">
+      <p>© 2025 Diamond Corporate. Todos os direitos reservados.</p>
+      <p>As informações aqui apresentadas não constituem aconselhamento financeiro, jurídico ou tributário.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a
+    href="https://wa.me/5561999897186?text=Olá!%20Gostaria%20de%20falar%20com%20a%20Diamond%20Corporate."
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Fale conosco no WhatsApp"
+    onclick="dataLayer && dataLayer.push({ event: 'whatsapp_click' });"
+  >
+    <span>Fale conosco</span>
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
+  </a>
+</body>
+</html>
