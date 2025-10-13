@@ -272,3 +272,63 @@ button:hover { background: #008ecc; }
 footer { background: #000; text-align: center; padding: 30px 20px; font-size: 0.9rem; color: #777; }
 .hero-subtitle{ color:#bcd7e6; font-size:0.95rem; margin-top:6px; }
 section h2 { text-align: center; }
+/* ===== Giro 360 ===== */
+.giro360-section {
+  background: linear-gradient(135deg, #002b40, #004e73, #0079b7);
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+.giro360-header h2 {
+  font-size: 2rem;
+  color: #00aaff;
+  margin-bottom: 10px;
+}
+.giro360-intro {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0f6ff;
+}
+.giro360-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+.giro360-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.giro360-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(0,170,255,0.4);
+}
+.giro360-card img {
+  width: 64px;
+  margin-bottom: 14px;
+}
+.giro360-card h3 {
+  font-size: 1.15rem;
+  color: #00aaff;
+  margin-bottom: 10px;
+}
+.giro360-card p {
+  font-size: 0.95rem;
+  color: #d8e8f3;
+  line-height: 1.6;
+}
+.giro360-fecho {
+  margin-top: 50px;
+  font-size: 1.1rem;
+  color: #f0f8ff;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+.giro360-fecho strong { color: #00aaff; }
