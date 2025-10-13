@@ -332,3 +332,12 @@ section h2 { text-align: center; }
   line-height: 1.6;
 }
 .giro360-fecho strong { color: #00aaff; }
+
+/* Corrige o deslocamento da âncora para seções com menu fixo */
+section[id] {
+  scroll-margin-top: 100px; /* ajuste a altura conforme o tamanho do seu menu */
+}
+
+html {
+  scroll-behavior: smooth;
+}
