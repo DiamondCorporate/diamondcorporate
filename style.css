@@ -1,4 +1,4 @@
-:root{
+:root{ 
   --navy:#031b44;
   --navy-2:#06204e;
   --navy-3:#0d2d63;
@@ -1739,6 +1739,45 @@ img{max-width:100%;display:block}
   height:28px;
   fill:#fff;
 }
+
+@media (min-width: 1500px){
+  .hero__content{
+    padding-top:96px;
+    padding-bottom:90px;
+  }
+
+  .brand-row{
+    margin-left:-52px;
+    margin-bottom:30px;
+  }
+
+  .brand-logo{
+    width:min(100%, 360px);
+  }
+
+  .hero-title{
+    font-size:30px;
+    line-height:1.16;
+    max-width:1100px;
+    margin-bottom:20px;
+  }
+
+  .hero-pillars{
+    grid-template-columns:repeat(3, 220px);
+    gap:18px;
+    max-width:696px;
+    margin-bottom:22px;
+  }
+
+  .pillar-card{
+    min-height:162px;
+  }
+
+  .pillar-card p{
+    font-size:15px;
+  }
+}
+
 
 /* RESPONSIVO */
 @media (max-width: 980px){
