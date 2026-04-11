@@ -12,7 +12,8 @@
 <header class="topbar">
 <div class="container topbar__inner">
 <a class="back-link" data-i18n="ui.home" href="#main">Home</a>
-<nav class="main-nav">
+<button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav class="main-nav" id="mainNav">
 <a data-i18n="menu.about" href="#quem-somos">Quem somos</a>
 <a data-i18n="menu.oracle" href="#atuacao">Oracle</a>
 <a data-i18n="menu.pulsar" href="#pulsar">Programa Pulsar</a>
@@ -663,6 +664,24 @@ function applyLanguage(lang) {
 document.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('siteLanguage') || 'pt';
   applyLanguage(savedLang);
+
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  const topbarInner = document.querySelector('.topbar__inner');
+
+  if (menuToggle && mainNav && topbarInner) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = topbarInner.classList.toggle('nav-open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    mainNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        topbarInner.classList.remove('nav-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 
   const langToggle = document.getElementById('langToggle');
   const langMenu = document.getElementById('langMenu');
