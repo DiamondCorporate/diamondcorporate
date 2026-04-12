@@ -576,6 +576,11 @@ img{max-width:100%;display:block}
     linear-gradient(rgba(3,27,68,.10), rgba(3,27,68,.10)),
     url('quem_somos.png') center/cover no-repeat;
 }
+.about-company__image--singlep{
+  background:
+    linear-gradient(rgba(3,27,68,.10), rgba(3,27,68,.10)),
+    url('img_parceria.png') center/cover no-repeat;
+}
 .about-company__image--left{
   border-right:1px solid rgba(255,255,255,.14);
 }
