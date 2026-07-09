@@ -116,9 +116,13 @@ img{max-width:100%;display:block}
   pointer-events:none;
 }
 .section-bg-primary{
-  background-image:linear-gradient(rgba(6,20,47,.62), rgba(6,20,47,.62)), url('desktop.png');
+  background-image:
+    linear-gradient(rgba(6,20,47,.62), rgba(6,20,47,.62)),
+    url('desktop.png');
   background-size:cover;
-  background-position:center top;
+  /* Abaixa o enquadramento da imagem sem deformá-la */
+  background-position:center 55px;
+  background-repeat:no-repeat;
 }
 .section-bg-dark{
   background-image:linear-gradient(rgba(2,17,44,.94), rgba(2,17,44,.94)), url('desktop.png');
