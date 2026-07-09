@@ -120,8 +120,8 @@ img{max-width:100%;display:block}
     linear-gradient(rgba(6,20,47,.62), rgba(6,20,47,.62)),
     url('desktop.png');
   background-size:cover;
-  /* Abaixa o enquadramento da imagem sem deformá-la */
-  background-position:center 55px;
+  /* Reposiciona o enquadramento da imagem sem deformá-la e sem criar faixa vazia no topo */
+  background-position:center 35%;
   background-repeat:no-repeat;
 }
 .section-bg-dark{
