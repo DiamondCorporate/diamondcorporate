@@ -152,8 +152,8 @@ img{max-width:100%;display:block}
   display:flex;
   align-items:center;
   justify-content:flex-start;
-  margin:0 0 66px -96px;
-  transform:translateY(-50px);
+  margin:0 0 66px -100px;
+  transform:translateY(-54px);
 }
 .brand-logo{
   width:min(100%, 300px);
@@ -1775,9 +1775,9 @@ img{max-width:100%;display:block}
   }
 
   .brand-row{
-    margin-left:-120px;
+    margin-left:-124px;
     margin-bottom:72px;
-    transform:translateY(-54px);
+    transform:translateY(-58px);
   }
 
   .brand-logo{
