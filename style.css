@@ -1814,6 +1814,17 @@ img{max-width:100%;display:block}
   }
 }
 
+/*
+  Ajuste apenas para monitores largos:
+  sobe o conjunto título + cards + assinatura sem alterar notebooks
+  convencionais, tablets ou o layout mobile.
+*/
+@media (min-width: 1600px){
+  .hero-copy{
+    transform:translateY(-34px);
+  }
+}
+
 
 /* RESPONSIVO */
 @media (max-width: 980px){
