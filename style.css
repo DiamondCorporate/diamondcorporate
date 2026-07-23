@@ -149,10 +149,17 @@ img{max-width:100%;display:block}
   pointer-events:auto;
 }
 .brand-row{
+  /*
+    Mantém a logo alinhada a uma margem segura da tela, em vez de
+    depender de um deslocamento fixo a partir do container central.
+    Assim ela avança mais para a esquerda em monitores grandes, mas
+    continua íntegra em notebooks e tablets.
+  */
+  --brand-viewport-gutter:clamp(32px, 4.5vw, 86px);
   display:flex;
   align-items:center;
   justify-content:flex-start;
-  margin:0 0 66px -100px;
+  margin:0 0 66px calc(50% - 50vw + var(--brand-viewport-gutter));
   transform:translateY(-54px);
 }
 .brand-logo{
@@ -1775,7 +1782,7 @@ img{max-width:100%;display:block}
   }
 
   .brand-row{
-    margin-left:-124px;
+    /* O alinhamento horizontal responsivo vem da regra base. */
     margin-bottom:72px;
     transform:translateY(-58px);
   }
