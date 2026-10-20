@@ -253,17 +253,19 @@ img{max-width:100%;display:block}
 }
 
 .pillar-logo--linksalute{
-  max-width:172px !important;
+  max-width:184px !important;
   object-fit:contain;
   object-position:center;
-  transform:scale(1.28);
+  transform:scale(1.45);
   transform-origin:center center;
 }
 
 .pillar-logo--selfservice{
-  max-width:158px !important;
+  max-width:172px !important;
   object-fit:contain;
   object-position:center;
+  transform:scale(1.18);
+  transform-origin:center center;
 }
 
 /* SISTEMA DE PAINÉIS */
