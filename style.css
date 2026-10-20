@@ -185,11 +185,11 @@ img{max-width:100%;display:block}
 }
 .hero-pillars{
   display:grid;
-  grid-template-columns:repeat(3, 190px);
+  grid-template-columns:repeat(4, 190px);
   justify-content:flex-start;
   gap:14px;
   margin:0 0 18px;
-  max-width:598px;
+  max-width:802px;
 }
 .pillar-card{
   min-height:145px;
@@ -226,6 +226,26 @@ img{max-width:100%;display:block}
   height:auto;
   display:block;
   margin-bottom:10px;
+}
+
+/* Novas marcas na Hero — ajuste de escala sem alterar a lógica visual */
+.pillar-logo--learning{
+  max-width:104px !important;
+  max-height:92px;
+  object-fit:contain;
+  object-position:left center;
+}
+.pillar-logo--linksalute{
+  max-width:148px !important;
+  max-height:72px;
+  object-fit:contain;
+  object-position:left center;
+}
+.pillar-logo--selfservice{
+  max-width:122px !important;
+  max-height:86px;
+  object-fit:contain;
+  object-position:left center;
 }
 
 /* SISTEMA DE PAINÉIS */
@@ -1799,9 +1819,9 @@ img{max-width:100%;display:block}
   }
 
   .hero-pillars{
-    grid-template-columns:repeat(3, 220px);
+    grid-template-columns:repeat(4, 220px);
     gap:18px;
-    max-width:696px;
+    max-width:934px;
     margin-bottom:22px;
   }
 
