@@ -218,7 +218,11 @@ img{max-width:100%;display:block}
 }
 .pillar-card p{
   width:100%;
+  min-height:38px;
   margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
   color:rgba(255,255,255,.78);
   font-size:14px;
@@ -226,39 +230,38 @@ img{max-width:100%;display:block}
   font-weight:700;
 }
 .pillar-card img{
-  max-width:165px;
-  height:auto;
+  width:100%;
+  height:88px;
+  flex:0 0 88px;
   display:block;
-  margin:0 auto 14px;
+  margin:0 auto 12px;
   object-fit:contain;
-  object-position:center;
+  object-position:center center;
 }
 
-/* Logos da Hero — maior destaque e centralização */
+/* Logos da Hero — escala equilibrada e textos alinhados */
 .pillar-logo--oracle{
-  max-width:150px !important;
-  max-height:72px;
+  max-width:154px !important;
   object-fit:contain;
   object-position:center;
 }
 
 .pillar-logo--learning{
   max-width:150px !important;
-  max-height:112px;
   object-fit:contain;
   object-position:center;
 }
 
 .pillar-logo--linksalute{
-  max-width:175px !important;
-  max-height:88px;
+  max-width:172px !important;
   object-fit:contain;
   object-position:center;
+  transform:scale(1.28);
+  transform-origin:center center;
 }
 
 .pillar-logo--selfservice{
   max-width:158px !important;
-  max-height:112px;
   object-fit:contain;
   object-position:center;
 }
