@@ -2664,3 +2664,466 @@ img{max-width:100%;display:block}
     max-width:300px;
   }
 }
+
+/* ============================================================
+   HERO PREMIUM — Diamond Corporate
+   Alteração isolada da Hero. Demais seções e menu permanecem intactos.
+   ============================================================ */
+
+.hero--premium.section-bg-primary{
+  background-image:
+    linear-gradient(90deg, rgba(2,17,44,.95) 0%, rgba(2,17,44,.78) 50%, rgba(2,17,44,.48) 100%),
+    linear-gradient(180deg, rgba(2,17,44,.10) 0%, rgba(2,17,44,.34) 100%),
+    url('desktop.png');
+  background-size:cover;
+  background-position:center 38%;
+}
+
+.hero--premium .hero__overlay{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 76% 42%, rgba(18,133,255,.19), transparent 27%),
+    linear-gradient(180deg, rgba(3,27,68,.08), rgba(3,27,68,.16));
+  pointer-events:none;
+}
+
+.hero-premium__content{
+  height:100%;
+  min-height:100%;
+  padding:20px 0 24px;
+  display:flex;
+  flex-direction:column;
+}
+
+.hero-premium__brand{
+  --brand-viewport-gutter:0px;
+  margin:0 0 8px 0;
+  transform:none;
+  flex:0 0 auto;
+}
+
+.hero-premium__brand .brand-logo{
+  width:clamp(220px, 19vw, 290px);
+  max-height:62px;
+  object-fit:contain;
+  object-position:left center;
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,.34));
+}
+
+.hero-premium__main{
+  flex:1 1 auto;
+  min-height:260px;
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) 360px;
+  gap:48px;
+  align-items:center;
+}
+
+.hero-premium__copy{
+  max-width:760px;
+  padding:4px 0 10px;
+}
+
+.hero-premium__eyebrow{
+  max-width:540px;
+  margin:0 0 14px;
+  color:#48c8ff;
+  font-size:clamp(11px, .95vw, 14px);
+  line-height:1.55;
+  font-weight:700;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
+
+.hero-premium__title{
+  margin:0;
+  max-width:760px;
+  color:#fff;
+  font-size:clamp(42px, 4.2vw, 66px);
+  line-height:.99;
+  font-weight:800;
+  letter-spacing:-2px;
+}
+
+.hero-premium__title span,
+.hero-premium__title strong{
+  display:block;
+}
+
+.hero-premium__title strong{
+  margin-top:8px;
+  color:#35b9f5;
+  font-weight:800;
+}
+
+.hero-premium__lead{
+  max-width:700px;
+  margin:18px 0 0;
+  color:rgba(255,255,255,.91);
+  font-size:clamp(15px, 1.25vw, 19px);
+  line-height:1.55;
+  font-weight:500;
+}
+
+.hero-premium__cta{
+  width:max-content;
+  margin-top:24px;
+  min-height:52px;
+  padding:0 26px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+  color:#fff;
+  background:#f98b00;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:999px;
+  box-shadow:0 15px 30px rgba(0,0,0,.18);
+  font-size:15px;
+  font-weight:800;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.hero-premium__cta:hover{
+  transform:translateY(-2px);
+  background:#ff970f;
+  box-shadow:0 18px 34px rgba(0,0,0,.24);
+}
+
+.hero-premium__cta span:last-child{
+  font-size:22px;
+  line-height:1;
+  transform:translateY(-1px);
+}
+
+.hero-premium__visual{
+  position:relative;
+  min-height:250px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-premium__visual-glow{
+  position:absolute;
+  width:320px;
+  height:320px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(46,170,255,.25) 0%, rgba(74,80,255,.13) 42%, transparent 70%);
+  filter:blur(2px);
+}
+
+.hero-premium__visual img{
+  position:relative;
+  z-index:2;
+  width:min(100%, 330px);
+  max-height:150px;
+  object-fit:contain;
+  filter:
+    drop-shadow(0 0 18px rgba(45,165,255,.32))
+    drop-shadow(0 18px 30px rgba(0,0,0,.32));
+}
+
+/* Ecosistema */
+.hero-ecosystem{
+  flex:0 0 auto;
+  width:100%;
+  margin-top:8px;
+  padding:16px 22px 14px;
+  background:linear-gradient(135deg, rgba(3,27,68,.86), rgba(4,35,78,.76));
+  border:1px solid rgba(66,190,255,.42);
+  border-radius:24px;
+  box-shadow:
+    0 22px 48px rgba(0,0,0,.24),
+    inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+
+.hero-ecosystem__header{
+  min-height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:0 6px 8px;
+  color:#45c9ff;
+  font-size:11px;
+  line-height:1.3;
+  font-weight:800;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+}
+
+.hero-ecosystem__header span:last-child{
+  text-align:right;
+  color:rgba(69,201,255,.84);
+}
+
+.hero-ecosystem__grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  border-top:1px solid rgba(77,191,246,.34);
+}
+
+.hero-ecosystem__item{
+  min-width:0;
+  min-height:118px;
+  padding:13px 20px 10px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  border-right:1px solid rgba(77,191,246,.30);
+}
+
+.hero-ecosystem__item:last-child{
+  border-right:none;
+}
+
+.hero-ecosystem__logo-wrap{
+  flex:1 1 auto;
+  min-height:62px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+.hero-ecosystem__logo{
+  display:block;
+  width:auto;
+  max-width:100%;
+  height:auto;
+  max-height:62px;
+  object-fit:contain;
+  object-position:left center;
+}
+
+.hero-ecosystem__logo--oracle{
+  width:150px;
+  max-height:44px;
+}
+
+.hero-ecosystem__logo--learning{
+  width:125px;
+  max-height:68px;
+}
+
+.hero-ecosystem__logo--linksalute{
+  width:178px;
+  max-height:62px;
+}
+
+.hero-ecosystem__logo--selfservice{
+  width:154px;
+  max-height:68px;
+}
+
+.hero-ecosystem__item p{
+  position:relative;
+  margin:8px 0 0;
+  padding-top:9px;
+  color:#fff;
+  font-size:14px;
+  line-height:1.25;
+  font-weight:800;
+}
+
+.hero-ecosystem__item p::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:34px;
+  height:2px;
+  border-radius:2px;
+  background:#3bc3ff;
+}
+
+
+/* Tablets */
+@media (max-width: 1100px){
+  .hero-premium__main{
+    grid-template-columns:minmax(0, 1fr) 280px;
+    gap:28px;
+  }
+
+  .hero-premium__title{
+    font-size:clamp(38px, 5vw, 54px);
+  }
+
+  .hero-premium__visual img{
+    width:min(100%, 270px);
+  }
+
+  .hero-ecosystem{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .hero-ecosystem__item{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .hero-ecosystem__logo--linksalute{ width:158px; }
+  .hero-ecosystem__logo--selfservice{ width:140px; }
+}
+
+
+/* A partir daqui a Hero deixa de ser fixa para preservar leitura e responsividade */
+@media (max-width: 980px){
+  .hero-fixed-layer{
+    position:relative;
+    top:0;
+    width:100%;
+    height:auto;
+    min-height:auto;
+    overflow:visible;
+  }
+
+  .hero-spacer{
+    display:none;
+  }
+
+  .hero--premium{
+    height:auto;
+    min-height:auto;
+  }
+
+  .hero-premium__content{
+    height:auto;
+    min-height:auto;
+    padding:28px 0 34px;
+  }
+
+  .hero-premium__brand{
+    margin-bottom:22px;
+  }
+
+  .hero-premium__main{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+
+  .hero-premium__visual{
+    display:none;
+  }
+
+  .hero-premium__copy{
+    max-width:760px;
+  }
+
+  .hero-premium__title{
+    max-width:720px;
+    font-size:clamp(38px, 7vw, 58px);
+  }
+
+  .hero-ecosystem{
+    margin-top:30px;
+  }
+
+  .hero-ecosystem__grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero-ecosystem__item{
+    min-height:126px;
+  }
+
+  .hero-ecosystem__item:nth-child(2){
+    border-right:none;
+  }
+
+  .hero-ecosystem__item:nth-child(-n+2){
+    border-bottom:1px solid rgba(77,191,246,.30);
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 620px){
+  .hero--premium.section-bg-primary{
+    background-position:58% center;
+  }
+
+  .hero-premium__brand .brand-logo{
+    width:min(100%, 245px);
+  }
+
+  .hero-premium__eyebrow{
+    max-width:340px;
+    margin-bottom:12px;
+    font-size:10px;
+    letter-spacing:.22em;
+  }
+
+  .hero-premium__title{
+    font-size:clamp(36px, 11vw, 49px);
+    letter-spacing:-1.5px;
+  }
+
+  .hero-premium__lead{
+    font-size:15px;
+  }
+
+  .hero-premium__cta{
+    min-height:50px;
+    padding:0 22px;
+  }
+
+  .hero-ecosystem{
+    padding:15px 14px 8px;
+    border-radius:20px;
+  }
+
+  .hero-ecosystem__header{
+    display:block;
+    padding-bottom:10px;
+  }
+
+  .hero-ecosystem__header span{
+    display:block;
+  }
+
+  .hero-ecosystem__header span:last-child{
+    margin-top:5px;
+    text-align:left;
+    font-size:9px;
+  }
+
+  .hero-ecosystem__grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-ecosystem__item,
+  .hero-ecosystem__item:nth-child(2){
+    min-height:98px;
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:18px;
+    align-items:center;
+    border-right:none;
+    border-bottom:1px solid rgba(77,191,246,.24);
+    padding:12px 8px;
+  }
+
+  .hero-ecosystem__item:last-child{
+    border-bottom:none;
+  }
+
+  .hero-ecosystem__logo-wrap{
+    min-height:65px;
+  }
+
+  .hero-ecosystem__item p{
+    margin:0;
+  }
+
+  .hero-ecosystem__logo--oracle{ width:138px; }
+  .hero-ecosystem__logo--learning{ width:110px; }
+  .hero-ecosystem__logo--linksalute{ width:145px; }
+  .hero-ecosystem__logo--selfservice{ width:132px; }
+}
+
+
