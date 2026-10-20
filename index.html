@@ -9,11 +9,14 @@
 <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-<header class="topbar">
-<div class="container topbar__inner">
-<a class="back-link" data-i18n="ui.home" href="#main">Home</a>
+<header class="topbar topbar--premium">
+<div class="container topbar__inner topbar__inner--premium">
+<a class="topbar-brand" href="#main" aria-label="Diamond Corporate - início">
+<img alt="Diamond Corporate" src="logo_diamond_white.png"/>
+</a>
 <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menu"><span></span><span></span><span></span></button>
 <nav class="main-nav" id="mainNav">
+<a class="back-link" data-i18n="ui.home" href="#main">Home</a>
 <a data-i18n="menu.about" href="#quem-somos">Quem somos</a>
 <a data-i18n="menu.oracle" href="#atuacao">Oracle</a>
 <a data-i18n="menu.pulsar" href="#pulsar">Programa Pulsar</a>
@@ -21,77 +24,58 @@
 <a data-i18n="menu.connections" href="#parcerias">Conexões Estratégicas</a>
 <a data-i18n="menu.contact" href="#contato">Contato</a>
 </nav>
-<div class="lang-switcher" id="langSwitcher"><button aria-expanded="false" class="lang-switcher__toggle" id="langToggle" type="button"><span id="currentLang">PT</span><span class="lang-switcher__arrow">▾</span></button><div class="lang-switcher__menu" id="langMenu"><button class="lang-switcher__option" data-lang="pt" type="button">PT</button><button class="lang-switcher__option" data-lang="en" type="button">EN</button></div></div></div>
+<div class="lang-switcher" id="langSwitcher"><button aria-expanded="false" class="lang-switcher__toggle" id="langToggle" type="button"><span id="currentLang">PT</span><span class="lang-switcher__arrow">▾</span></button><div class="lang-switcher__menu" id="langMenu"><button class="lang-switcher__option" data-lang="pt" type="button">PT</button><button class="lang-switcher__option" data-lang="en" type="button">EN</button></div></div>
+</div>
 </header>
 <main class="site-shell" id="main">
 <section aria-hidden="false" class="hero-fixed-layer">
-<section class="hero section-bg-primary hero--premium">
+<section class="hero section-bg-primary hero--premium-v2">
 <div class="hero__overlay"></div>
-<div class="container hero__content hero-premium__content">
+<img class="hero-premium-v2__building" src="hero_diamond_building.png" alt="" aria-hidden="true"/>
+<div class="container hero-premium-v2__content">
 
-<div class="brand-row hero-premium__brand">
-<img alt="Diamond Corporate" class="brand-logo" src="logo_diamond_white.png"/>
-</div>
-
-<div class="hero-premium__main">
-<div class="hero-premium__copy">
-<p class="hero-premium__eyebrow" data-i18n="hero.eyebrow">Soluções empresariais para um mercado em movimento</p>
-
-<h1 class="hero-premium__title">
+<div class="hero-premium-v2__main">
+<div class="hero-premium-v2__copy">
+<p class="hero-premium-v2__eyebrow" data-i18n="hero.eyebrow">Soluções empresariais para um mercado em movimento</p>
+<h1 class="hero-premium-v2__title">
 <span data-i18n="hero.headline1">Problemas complexos.</span>
-<strong data-i18n="hero.headline2">Soluções que chegam ao mercado.</strong>
+<strong>
+<span data-i18n="hero.headline2a">Soluções que chegam</span>
+<span data-i18n="hero.headline2b">ao mercado.</span>
+</strong>
 </h1>
-
-<p class="hero-premium__lead" data-i18n="hero.lead">
-Tecnologia, conhecimento especializado e capacidade de execução para construir e operar soluções empresariais.
-</p>
-
-<a class="hero-premium__cta" href="#atuacao">
-<span data-i18n="hero.cta">Conheça nossa atuação</span>
-<span aria-hidden="true">→</span>
-</a>
-</div>
-
-<div class="hero-premium__visual" aria-hidden="true">
-<div class="hero-premium__visual-glow"></div>
-<img alt="" src="logo_diamond_white.png"/>
+<p class="hero-premium-v2__lead" data-i18n="hero.lead">Tecnologia, conhecimento especializado e capacidade de execução para construir e operar soluções empresariais.</p>
+<a class="hero-premium-v2__cta" href="#atuacao"><span data-i18n="hero.cta">Conheça nossa atuação</span><span aria-hidden="true">→</span></a>
 </div>
 </div>
 
-<div class="hero-ecosystem" aria-label="Ecossistema Diamond Corporate">
-<div class="hero-ecosystem__header">
+<div class="hero-ecosystem-v2">
+<div class="hero-ecosystem-v2__header">
 <span data-i18n="hero.ecosystem">Nosso ecossistema</span>
 <span data-i18n="hero.ecosystemTag">Soluções especializadas com impacto real</span>
 </div>
+<div class="hero-ecosystem-v2__grid">
 
-<div class="hero-ecosystem__grid">
-<article class="hero-ecosystem__item">
-<div class="hero-ecosystem__logo-wrap">
-<img alt="Oracle" class="hero-ecosystem__logo hero-ecosystem__logo--oracle" src="log_Oracle.png"/>
-</div>
-<p data-i18n="hero.oracle">Tecnologia corporativa</p>
+<article class="hero-ecosystem-v2__item">
+<div class="hero-ecosystem-v2__logo-wrap"><img alt="Oracle" class="hero-ecosystem-v2__logo hero-ecosystem-v2__logo--oracle" src="log_Oracle.png"/></div>
+<div class="hero-ecosystem-v2__footer"><p data-i18n="hero.oracle">Tecnologia corporativa</p><span class="hero-ecosystem-v2__arrow" aria-hidden="true">→</span></div>
 </article>
 
-<article class="hero-ecosystem__item">
-<div class="hero-ecosystem__logo-wrap">
-<img alt="Diamond Learning" class="hero-ecosystem__logo hero-ecosystem__logo--learning" src="logo_diamond_learning.png"/>
-</div>
-<p data-i18n="hero.learning">Educação digital</p>
+<article class="hero-ecosystem-v2__item">
+<div class="hero-ecosystem-v2__logo-wrap"><img alt="Diamond Learning" class="hero-ecosystem-v2__logo hero-ecosystem-v2__logo--learning" src="logo_diamond_learning.png"/></div>
+<div class="hero-ecosystem-v2__footer"><p data-i18n="hero.learning">Educação digital</p><span class="hero-ecosystem-v2__arrow" aria-hidden="true">→</span></div>
 </article>
 
-<article class="hero-ecosystem__item">
-<div class="hero-ecosystem__logo-wrap">
-<img alt="Link Salute" class="hero-ecosystem__logo hero-ecosystem__logo--linksalute" src="logo_linksalute.png"/>
-</div>
-<p data-i18n="hero.linksalute">Saúde digital</p>
+<article class="hero-ecosystem-v2__item">
+<div class="hero-ecosystem-v2__logo-wrap"><img alt="Link Salute" class="hero-ecosystem-v2__logo hero-ecosystem-v2__logo--linksalute" src="logo_linksalute.png"/></div>
+<div class="hero-ecosystem-v2__footer"><p data-i18n="hero.linksalute">Saúde digital</p><span class="hero-ecosystem-v2__arrow" aria-hidden="true">→</span></div>
 </article>
 
-<article class="hero-ecosystem__item">
-<div class="hero-ecosystem__logo-wrap">
-<img alt="Self-Service Online" class="hero-ecosystem__logo hero-ecosystem__logo--selfservice" src="logo_selfservice_online.png"/>
-</div>
-<p data-i18n="hero.selfservice">Foodtech e conveniência</p>
+<article class="hero-ecosystem-v2__item">
+<div class="hero-ecosystem-v2__logo-wrap"><img alt="Self-Service Online" class="hero-ecosystem-v2__logo hero-ecosystem-v2__logo--selfservice" src="logo_selfservice_online.png"/></div>
+<div class="hero-ecosystem-v2__footer"><p data-i18n="hero.selfservice">Foodtech e conveniência</p><span class="hero-ecosystem-v2__arrow" aria-hidden="true">→</span></div>
 </article>
+
 </div>
 </div>
 
@@ -501,7 +485,8 @@ const translations = {
   "hero.title": "Estratégia, tecnologia e inteligência institucional",
   "hero.eyebrow": "Soluções empresariais para um mercado em movimento",
   "hero.headline1": "Problemas complexos.",
-  "hero.headline2": "Soluções que chegam ao mercado.",
+  "hero.headline2a": "Soluções que chegam",
+  "hero.headline2b": "ao mercado.",
   "hero.lead": "Tecnologia, conhecimento especializado e capacidade de execução para construir e operar soluções empresariais.",
   "hero.cta": "Conheça nossa atuação",
   "hero.ecosystem": "Nosso ecossistema",
@@ -610,7 +595,8 @@ const translations = {
   "hero.title": "Strategy, technology and institutional intelligence",
   "hero.eyebrow": "Business solutions for a market in motion",
   "hero.headline1": "Complex problems.",
-  "hero.headline2": "Solutions that reach the market.",
+  "hero.headline2a": "Solutions that reach",
+  "hero.headline2b": "the market.",
   "hero.lead": "Technology, specialized knowledge and execution capability to build and operate business solutions.",
   "hero.cta": "Explore our capabilities",
   "hero.ecosystem": "Our ecosystem",

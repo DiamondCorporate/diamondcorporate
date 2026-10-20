@@ -1,26 +1,22 @@
-PATCH HERO PREMIUM — DIAMOND CORPORATE
+DIAMOND CORPORATE — HERO PREMIUM V2
 
-ALTERADO:
-- Hero completa
-- Textos PT/EN da Hero
-- CSS exclusivo da Hero
-- Assets das logos usados na Hero
+Correções em relação ao V1:
+- menu visualmente integrado à Hero (conteúdo/links mantidos)
+- largura da Hero aumentada para reproduzir a composição do mockup
+- headline forçada em 3 linhas como no conceito aprovado
+- painel do ecossistema ampliado e logos maiores
+- visual lateral do edifício com a marca Diamond, derivado do mockup aprovado
+- removido qualquer botão extra "Fale conosco"; WhatsApp flutuante do site permanece
+- todas as seções abaixo da Hero permanecem no HTML sem alteração
 
-MANTIDO INTACTO:
-- Menu existente
-- Todas as seções abaixo da Hero
-- Programa Pulsar
-- Ativos Tributários / Vocare
-- Conexões Estratégicas
-- Contato
-- WhatsApp flutuante
+Arquivos:
+index.html
+style.css
+hero_diamond_building.png
+logo_diamond_white.png
+log_Oracle.png
+logo_diamond_learning.png
+logo_linksalute.png
+logo_selfservice_online.png
 
-ASSETS:
-- logo_diamond_white.png
-- log_Oracle.png
-- logo_diamond_learning.png
-- logo_linksalute.png
-- logo_selfservice_online.png
-
-A Hero continua utilizando o background já existente no projeto:
-- desktop.png
+O projeto continua usando os assets já existentes desktop.png e mobile.png.
