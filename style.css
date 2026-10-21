@@ -3574,3 +3574,302 @@ img{max-width:100%;display:block}
   }
 }
 
+
+/* ==========================================================
+   HERO PREMIUM V4
+   - seletor de idioma corrigido
+   - imagem do prédio até o fim da Hero
+   - responsivo do ecossistema reconstruído
+   ========================================================== */
+
+/* 1) Seletor de idioma: elimina opções brancas com texto branco */
+.topbar--premium .lang-switcher__menu{
+  min-width:86px;
+  padding:4px;
+  background:rgba(3,27,68,.98);
+  border:1px solid rgba(74,190,255,.32);
+  border-radius:14px;
+  box-shadow:0 16px 34px rgba(0,0,0,.28);
+  overflow:hidden;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+
+.topbar--premium .lang-switcher__option{
+  width:100%;
+  height:40px;
+  padding:0 14px;
+  background:transparent;
+  color:#fff;
+  border:0;
+  border-radius:10px;
+  text-align:left;
+}
+
+.topbar--premium .lang-switcher__option:hover,
+.topbar--premium .lang-switcher__option:focus-visible{
+  background:rgba(71,198,255,.15);
+  color:#fff;
+  outline:none;
+}
+
+/* 2) Prédio Diamond: uma única composição visual até o final da Hero */
+.hero-premium-v2__building{
+  top:0;
+  right:0;
+  width:min(49vw, 920px);
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  opacity:1;
+  -webkit-mask-image:linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0,0,0,.28) 7%,
+    rgba(0,0,0,.78) 18%,
+    #000 31%,
+    #000 100%
+  );
+  mask-image:linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0,0,0,.28) 7%,
+    rgba(0,0,0,.78) 18%,
+    #000 31%,
+    #000 100%
+  );
+}
+
+/* A cidade original permanece somente como atmosfera da metade esquerda */
+.hero--premium-v2.section-bg-primary{
+  background-position:left 33%;
+}
+
+/* Tablet: imagem continua inteira até a base, com integração mais suave */
+@media (max-width:1350px){
+  .hero-premium-v2__building{
+    width:51vw;
+    height:100%;
+  }
+}
+
+/* 3) Responsivo: a Hero passa a ter altura real do conteúdo, sem sobrepor Oracle */
+@media (max-width:980px){
+  .hero-fixed-layer{
+    position:relative;
+    top:0;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible;
+  }
+
+  .hero-spacer{
+    display:none !important;
+    height:0 !important;
+  }
+
+  .hero--premium-v2{
+    height:auto !important;
+    min-height:0 !important;
+    overflow:hidden;
+  }
+
+  .hero-premium-v2__content{
+    height:auto !important;
+    min-height:0 !important;
+    padding-top:104px;
+    padding-bottom:30px;
+  }
+
+  .hero-premium-v2__main{
+    flex:none;
+    min-height:430px;
+    padding-bottom:30px;
+  }
+
+  .hero-premium-v2__building{
+    width:66vw;
+    height:100%;
+    opacity:.62;
+    object-position:center top;
+  }
+
+  .hero-ecosystem-v2{
+    position:relative;
+    z-index:4;
+    min-height:0;
+  }
+
+  .hero-ecosystem-v2__grid{
+    min-height:0;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .hero-ecosystem-v2__item{
+    min-height:150px;
+    padding:16px 18px 12px;
+  }
+
+  .hero-ecosystem-v2__logo-wrap{
+    min-height:78px;
+  }
+}
+
+/* Mobile: 2x2, logos centralizadas e blocos proporcionais */
+@media (max-width:620px){
+  .topbar--premium .lang-switcher__menu{
+    min-width:74px;
+    right:0;
+  }
+
+  .hero--premium-v2.section-bg-primary{
+    background-image:
+      linear-gradient(180deg, rgba(2,17,44,.95), rgba(2,17,44,.82)),
+      url('mobile.png');
+    background-position:center top;
+  }
+
+  .hero-premium-v2__building{
+    display:none;
+  }
+
+  .hero-premium-v2__content{
+    width:min(100% - 24px,560px);
+    padding-top:98px;
+    padding-bottom:22px;
+  }
+
+  .hero-premium-v2__main{
+    min-height:0;
+    padding-bottom:26px;
+  }
+
+  .hero-ecosystem-v2{
+    width:100%;
+    padding:14px 12px 10px;
+    border-radius:20px;
+  }
+
+  .hero-ecosystem-v2__header{
+    display:block;
+    min-height:0;
+    padding:0 4px 12px;
+  }
+
+  .hero-ecosystem-v2__header span{
+    display:block;
+  }
+
+  .hero-ecosystem-v2__header span:last-child{
+    margin-top:6px;
+    text-align:left;
+    font-size:9px;
+    line-height:1.35;
+  }
+
+  .hero-ecosystem-v2__grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .hero-ecosystem-v2__item,
+  .hero-ecosystem-v2__item:nth-child(2){
+    min-height:156px;
+    padding:14px 9px 12px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:8px;
+    border-right:1px solid rgba(69,195,255,.22);
+    border-bottom:1px solid rgba(69,195,255,.22);
+  }
+
+  .hero-ecosystem-v2__item:nth-child(2),
+  .hero-ecosystem-v2__item:nth-child(4){
+    border-right:none;
+  }
+
+  .hero-ecosystem-v2__item:nth-child(3),
+  .hero-ecosystem-v2__item:nth-child(4){
+    border-bottom:none;
+  }
+
+  .hero-ecosystem-v2__logo-wrap{
+    width:100%;
+    min-height:82px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .hero-ecosystem-v2__logo{
+    object-position:center center;
+    margin:0 auto;
+  }
+
+  .hero-ecosystem-v2__logo--oracle{
+    width:min(100%,130px);
+    max-height:48px;
+  }
+
+  .hero-ecosystem-v2__logo--learning{
+    width:min(100%,100px);
+    max-height:78px;
+  }
+
+  .hero-ecosystem-v2__logo--linksalute{
+    width:min(100%,145px);
+    max-height:58px;
+  }
+
+  .hero-ecosystem-v2__logo--selfservice{
+    width:min(100%,118px);
+    max-height:80px;
+  }
+
+  .hero-ecosystem-v2__footer{
+    width:100%;
+    display:block;
+  }
+
+  .hero-ecosystem-v2__footer p{
+    max-width:none;
+    min-height:42px;
+    margin:0;
+    padding-top:10px;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    text-align:center;
+    font-size:13px;
+    line-height:1.22;
+  }
+
+  .hero-ecosystem-v2__footer p::before{
+    left:50%;
+    width:30px;
+    transform:translateX(-50%);
+  }
+
+  .hero-ecosystem-v2__arrow{
+    display:none;
+  }
+}
+
+/* Telas muito estreitas: preserva os dois cards por linha sem apertar o texto */
+@media (max-width:390px){
+  .hero-ecosystem-v2__item,
+  .hero-ecosystem-v2__item:nth-child(2){
+    min-height:148px;
+    padding-left:6px;
+    padding-right:6px;
+  }
+
+  .hero-ecosystem-v2__footer p{
+    font-size:12px;
+  }
+
+  .hero-ecosystem-v2__logo--oracle{width:118px;}
+  .hero-ecosystem-v2__logo--linksalute{width:132px;}
+  .hero-ecosystem-v2__logo--selfservice{width:108px;}
+}
+
