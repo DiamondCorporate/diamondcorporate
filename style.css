@@ -4880,3 +4880,45 @@ img{max-width:100%;display:block}
   }
 }
 
+
+/* ==========================================================
+   V8.1 — SSOL logo maior e posicionada no topo
+   ========================================================== */
+
+.ssol-brandline{
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.ssol-logo{
+  order:-1;
+  width:220px;
+  max-height:96px;
+  object-position:left top;
+}
+
+.ssol-eyebrow{
+  margin-top:2px;
+}
+
+@media (max-width:1200px){
+  .ssol-logo{
+    width:198px;
+    max-height:88px;
+  }
+}
+
+@media (max-width:620px){
+  .ssol-brandline{
+    gap:8px;
+    margin-bottom:16px;
+  }
+
+  .ssol-logo{
+    width:182px;
+    max-height:84px;
+  }
+}
+
