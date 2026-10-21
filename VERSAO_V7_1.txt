@@ -1,0 +1,4 @@
+Diamond Corporate V7.1
+Diamond Learning substitui Programa Pulsar.
+Menu atualizado para Diamond Learning.
+Build marker inserido em index.html e style.css para forçar diff no Git.
