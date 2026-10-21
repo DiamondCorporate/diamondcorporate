@@ -4626,3 +4626,257 @@ img{max-width:100%;display:block}
   }
 }
 
+
+/* ==========================================================
+   SELF-SERVICE ONLINE — teaser premium de lançamento
+   ========================================================== */
+
+#selfservice-online{
+  scroll-margin-top:108px;
+}
+
+.ssol-section .panel-shell{
+  position:relative;
+  overflow:hidden;
+  padding:0;
+  background:
+    radial-gradient(circle at 84% 22%, rgba(255,120,60,.10), transparent 34%),
+    linear-gradient(135deg,#12070a 0%,#21090d 46%,#080d1c 100%);
+}
+
+.ssol-layout{
+  min-height:560px;
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(520px,1.08fr);
+  align-items:stretch;
+}
+
+.ssol-content{
+  position:relative;
+  z-index:3;
+  padding:74px 54px 64px 58px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.ssol-brandline{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-bottom:22px;
+}
+
+.ssol-eyebrow{
+  color:#ffb26a;
+  font-size:12px;
+  line-height:1.2;
+  font-weight:800;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+.ssol-logo{
+  width:176px;
+  max-height:76px;
+  object-fit:contain;
+  object-position:left center;
+  filter:drop-shadow(0 8px 16px rgba(0,0,0,.18));
+}
+
+.ssol-title{
+  max-width:520px;
+  margin:0;
+  color:#fffaf7;
+  font-size:clamp(40px,3.2vw,56px);
+  line-height:1.02;
+  font-weight:800;
+  letter-spacing:-1.4px;
+}
+
+.ssol-lead{
+  max-width:440px;
+  margin:16px 0 0;
+  color:rgba(255,247,240,.82);
+  font-size:20px;
+  line-height:1.45;
+  font-weight:500;
+}
+
+.ssol-launchbox{
+  max-width:400px;
+  margin-top:28px;
+  padding:20px 24px;
+  background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+  border:1px solid rgba(255,170,95,.22);
+  border-radius:22px;
+  box-shadow:0 20px 44px rgba(0,0,0,.16);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+.ssol-launchbox__kicker{
+  display:block;
+  margin-bottom:6px;
+  color:#ffb564;
+  font-size:13px;
+  line-height:1.2;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.ssol-launchbox strong{
+  display:block;
+  color:#ffffff;
+  font-size:26px;
+  line-height:1.14;
+  font-weight:800;
+  letter-spacing:-.5px;
+}
+
+.ssol-visual{
+  position:relative;
+  min-height:560px;
+  overflow:hidden;
+}
+
+.ssol-visual__image{
+  width:100%;
+  height:100%;
+  min-height:560px;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+}
+
+.ssol-visual__overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(18,7,10,.92) 0%, rgba(18,7,10,.64) 18%, rgba(18,7,10,.18) 36%, transparent 52%),
+    linear-gradient(0deg, rgba(12,9,18,.18), rgba(12,9,18,.18));
+  pointer-events:none;
+}
+
+.ssol-badge{
+  position:absolute;
+  right:24px;
+  top:24px;
+  z-index:4;
+  min-height:38px;
+  padding:0 16px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff6ef;
+  background:rgba(17,8,11,.48);
+  border:1px solid rgba(255,255,255,.20);
+  border-radius:999px;
+  box-shadow:0 14px 32px rgba(0,0,0,.16);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+@media (max-width:1200px){
+  .ssol-layout{
+    grid-template-columns:minmax(0,.94fr) minmax(420px,1fr);
+  }
+
+  .ssol-content{
+    padding-left:42px;
+    padding-right:32px;
+  }
+
+  .ssol-title{
+    font-size:clamp(36px,3.45vw,48px);
+  }
+
+  .ssol-lead{
+    font-size:18px;
+  }
+
+  .ssol-launchbox strong{
+    font-size:24px;
+  }
+}
+
+@media (max-width:920px){
+  .ssol-layout{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .ssol-content{
+    padding:52px 34px 34px;
+  }
+
+  .ssol-visual,
+  .ssol-visual__image{
+    min-height:420px;
+  }
+
+  .ssol-visual__overlay{
+    background:
+      linear-gradient(180deg, rgba(18,7,10,.16) 0%, rgba(18,7,10,.42) 100%);
+  }
+}
+
+@media (max-width:620px){
+  #selfservice-online{
+    scroll-margin-top:88px;
+  }
+
+  .ssol-content{
+    padding:40px 22px 28px;
+  }
+
+  .ssol-brandline{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:18px;
+  }
+
+  .ssol-logo{
+    width:160px;
+  }
+
+  .ssol-title{
+    font-size:clamp(31px,9vw,40px);
+  }
+
+  .ssol-lead{
+    max-width:100%;
+    margin-top:12px;
+    font-size:17px;
+  }
+
+  .ssol-launchbox{
+    max-width:none;
+    margin-top:22px;
+    padding:18px 18px;
+  }
+
+  .ssol-launchbox strong{
+    font-size:23px;
+  }
+
+  .ssol-visual,
+  .ssol-visual__image{
+    min-height:320px;
+  }
+
+  .ssol-badge{
+    top:18px;
+    right:18px;
+    min-height:34px;
+    padding:0 13px;
+    font-size:11px;
+  }
+}
+
